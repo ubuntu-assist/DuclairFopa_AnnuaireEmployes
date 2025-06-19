@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annuaire des Employés - Orange</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg"
+            alt="Orange Logo"
+            class="logo-orange"
+          />
+          Annuaire des Employés
+        </h1>
+        <p>Système de gestion des employés - Orange Summer Challenge 2025</p>
+      </div>
+
+      <div class="stats">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number" id="totalEmployees">0</span>
+            <span class="stat-label">Total Employés</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="uniqueDepartments">0</span>
+            <span class="stat-label">Départements</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="lastAdded">Aucun</span>
+            <span class="stat-label">Dernier ajout</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="form-section">
+          <h2>➕ Ajouter un employé</h2>
+
+          <div class="success-message" id="successMessage">
+            ✅ Employé ajouté avec succès !
+          </div>
+
+          <form id="employeeForm">
+            <div class="form-group">
+              <label for="lastName">Nom *</label>
+              <input type="text" id="lastName" name="lastName" required />
+              <div class="error-message" id="lastNameError">
+                Le nom est requis
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="firstName">Prénom *</label>
+              <input type="text" id="firstName" name="firstName" required />
+              <div class="error-message" id="firstNameError">
+                Le prénom est requis
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required />
+              <div class="error-message" id="emailError">Email invalide</div>
+            </div>
+
+            <div class="form-group">
+              <label for="position">Poste/Fonction *</label>
+              <input type="text" id="position" name="position" required />
+              <div class="error-message" id="positionError">
+                Le poste est requis
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              ✨ Ajouter l'employé
+            </button>
+          </form>
+        </div>
+
+        <div class="list-section">
+          <h2>
+            👥 Liste des employés
+            <span class="employee-count" id="employeeCount">0</span>
+          </h2>
+
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              id="searchInput"
+              placeholder="🔍 Rechercher un employé..."
+            />
+          </div>
+
+          <div class="employees-list" id="employeesList">
+            <div class="empty-state">
+              <div style="font-size: 4rem; margin-bottom: 20px">👨‍💼</div>
+              <h3>Aucun employé enregistré</h3>
+              <p>
+                Ajoutez votre premier employé en utilisant le formulaire
+                ci-contre.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="deleteModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>🗑️ Confirmer la suppression</h3>
+          <button class="modal-close" onclick="app.closeDeleteModal()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-icon">
+            <div class="warning-icon">⚠️</div>
+          </div>
+          <p>Êtes-vous sûr de vouloir supprimer l'employé :</p>
+          <div class="employee-to-delete">
+            <strong id="employeeToDeleteName"></strong>
+            <span id="employeeToDeleteEmail"></span>
+          </div>
+          <p class="warning-text">Cette action est irréversible.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="app.closeDeleteModal()">
+            ❌ Annuler
+          </button>
+          <button class="btn btn-danger" onclick="app.confirmDelete()">
+            🗑️ Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
