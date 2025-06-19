@@ -129,7 +129,7 @@ Si vous préférez télécharger sans Git :
 ## 🛠️ Structure du Projet
 
 ```
-AnnuaireEmployes/
+DuclairFopa_AnnuaireEmployes/
 ├── index.html          # Page principale
 ├── style.css           # Styles CSS
 ├── script.js           # Logique JavaScript
