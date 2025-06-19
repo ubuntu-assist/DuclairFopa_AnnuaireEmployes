@@ -225,15 +225,6 @@ AnnuaireEmployes/
 - **Échappement HTML** pour prévenir les attaques XSS
 - **Validation côté client** robuste et sécurisée
 
-## 📊 Métriques du Projet
-
-- **Lignes de code HTML :** ~85
-- **Lignes de code CSS :** ~350
-- **Lignes de code JavaScript :** ~400
-- **Temps de développement :** 4h
-- **Fichiers :** 4 (HTML, CSS, JS, README)
-- **Taille totale :** < 50KB
-
 ## 🎉 Résultat
 
 Une application web moderne, performante et user-friendly qui dépasse les exigences du cahier des charges tout en respectant toutes les contraintes techniques imposées.
